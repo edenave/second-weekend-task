@@ -144,7 +144,9 @@ x.totalTime = (x.finishedAt - x.startedAt)/3600000 + " hours";
 }
 
 for(let y of mainArr ){
-    y.tasksFinishedPrecent = (y.tasksFinished / y.tasksGiven) * 100 + " %";
+
+    let yfloored = Math.floor((y.tasksFinished / y.tasksGiven) * 100)
+    y.tasksFinishedPrecent = yfloored + " %";
 }
 
 
