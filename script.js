@@ -112,7 +112,7 @@ const mainArr = [
 
                                         startedAt: new Date("2021-01-20:11:00"),
                                         
-                                        finishedAt: new Date("2021-01-20:14:00"),
+                                        finishedAt: new Date("2021-01-20:18:00"),
                                         
                                         tasksGiven: 10,
                                         
@@ -146,7 +146,7 @@ x.totalTime = parseInt((x.finishedAt - x.startedAt)/3600000);
 for(let y of mainArr ){
 
     let yfloored = Math.floor((y.tasksFinished / y.tasksGiven) * 100)
-    y.tasksFinishedPrecent = yfloored + " %";
+    y.tasksFinishedPrecent = parseInt(yfloored);
 
 
     
@@ -185,12 +185,17 @@ for (let tr of mainArr){
     let classTotalTime;
     if (tr.totalTime <= 2) {
         classTotalTime ="ifLessTwoHours";
-    } else if ( 2 < tr.totalTime <= 4) {
+    } else if (tr.totalTime <= 4) {
         classTotalTime = "ifLessFourHours";
         
+    }else{
+        classTotalTime = "ifMore";
     }
-    document.write( `<tr> <td>${tr.startedAt.toLocaleTimeString()}</td> <td>${tr.finishedAt.toLocaleTimeString()}</td><td>${tr.tasksGiven}</td>
-    <td>${tr.tasksFinished}</td><td>${tr.topic}</td><td class = ${classTotalTime}>${tr.totalTime}</td><td>${tr.tasksFinishedPrecent}</td>
+
+    let classPrecent;
+
+    document.write( `<tr> <td>${tr.startedAt.toLocaleTimeString()}</td> <td>${tr.finishedAt.toLocaleTimeString()} </td><td>${tr.tasksGiven}</td>
+    <td>${tr.tasksFinished}</td><td>${tr.topic}</td><td class = ${classTotalTime}>${tr.totalTime} hours</td><td>${tr.tasksFinishedPrecent} %</td>
     </tr>`);
     // for(td in tr){
     // document.write(`<tr><td>${tr[td]}</td> </tr>`);
