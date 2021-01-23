@@ -4,219 +4,202 @@ const mainArr = [
     {
 
         startedAt: new Date("2021-01-20:13:00"),
-        
+
         finishedAt: new Date("2021-01-20:19:00"),
-        
+
         tasksGiven: 10,
-        
+
         tasksFinished: 7,
-        
+
         topic: "JavaScript"
-        
-        },
+
+    },
 
 
-        {
+    {
 
-            startedAt: new Date("2021-01-20:11:00"),
-            
-            finishedAt: new Date("2021-01-20:14:00"),
-            
-            tasksGiven: 10,
-            
-            tasksFinished: 7,
-            
-            topic: "JavaScript"
-            
-            },
+        startedAt: new Date("2021-01-11:11:00"),
 
-            {
+        finishedAt: new Date("2021-01-11:12:00"),
 
-                startedAt: new Date("2021-01-20:11:00"),
-                
-                finishedAt: new Date("2021-01-20:14:00"),
-                
-                tasksGiven: 10,
-                
-                tasksFinished: 7,
-                
-                topic: "JavaScript"
-                
-                },
-                {
+        tasksGiven: 20,
 
-                    startedAt: new Date("2021-01-20:11:00"),
-                    
-                    finishedAt: new Date("2021-01-20:14:00"),
-                    
-                    tasksGiven: 10,
-                    
-                    tasksFinished: 7,
-                    
-                    topic: "JavaScript"
-                    
-                    },
-                    {
+        tasksFinished: 10,
 
-                        startedAt: new Date("2021-01-20:11:00"),
-                        
-                        finishedAt: new Date("2021-01-20:14:00"),
-                        
-                        tasksGiven: 10,
-                        
-                        tasksFinished: 7,
-                        
-                        topic: "JavaScript"
-                        
-                        },
-                        {
+        topic: "Html"
 
-                            startedAt: new Date("2021-01-20:11:00"),
-                            
-                            finishedAt: new Date("2021-01-20:14:00"),
-                            
-                            tasksGiven: 10,
-                            
-                            tasksFinished: 7,
-                            
-                            topic: "JavaScript"
-                            
-                            },
-                            {
+    },
 
-                                startedAt: new Date("2021-01-20:11:00"),
-                                
-                                finishedAt: new Date("2021-01-20:14:00"),
-                                
-                                tasksGiven: 10,
-                                
-                                tasksFinished: 7,
-                                
-                                topic: "JavaScript"
-                                
-                                },
-                                {
+    {
 
-                                    startedAt: new Date("2021-01-20:11:00"),
-                                    
-                                    finishedAt: new Date("2021-01-20:14:00"),
-                                    
-                                    tasksGiven: 10,
-                                    
-                                    tasksFinished: 7,
-                                    
-                                    topic: "JavaScript"
-                                    
-                                    },
-                                    {
+        startedAt: new Date("2021-01-01:13:00"),
 
-                                        startedAt: new Date("2021-01-20:11:00"),
-                                        
-                                        finishedAt: new Date("2021-01-20:18:00"),
-                                        
-                                        tasksGiven: 10,
-                                        
-                                        tasksFinished: 7,
-                                        
-                                        topic: "JavaScript"
-                                        
-                                        },
-                                        {
+        finishedAt: new Date("2021-01-01:20:00"),
 
-                                            startedAt: new Date("2021-01-20:11:00"),
-                                            
-                                            finishedAt: new Date("2021-01-20:13:00"),
-                                            
-                                            tasksGiven: 10,
-                                            
-                                            tasksFinished: 7,
-                                            
-                                            topic: "JavaScript"
-                                            
-                                            },
+        tasksGiven: 12,
+
+        tasksFinished: 2,
+
+        topic: "CSS"
+
+    },
+    {
+
+        startedAt: new Date("2021-01-26:11:00"),
+
+        finishedAt: new Date("2021-01-26:15:00"),
+
+        tasksGiven: 10,
+
+        tasksFinished: 10,
+
+        topic: "JS Functions"
+
+    },
+    {
+
+        startedAt: new Date("2021-01-21:11:00"),
+
+        finishedAt: new Date("2021-01-21:16:00"),
+
+        tasksGiven: 40,
+
+        tasksFinished: 27,
+
+        topic: "Dom Manipulations"
+
+    },
+    {
+
+        startedAt: new Date("2021-01-20:14:00"),
+
+        finishedAt: new Date("2021-01-20:18:00"),
+
+        tasksGiven: 70,
+
+        tasksFinished: 7,
+
+        topic: "Arrays"
+
+    },
+    {
+
+        startedAt: new Date("2021-01-20:17:00"),
+
+        finishedAt: new Date("2021-01-20:19:00"),
+
+        tasksGiven: 11,
+
+        tasksFinished: 4,
+
+        topic: "Objects"
+
+    },
+    {
+
+        startedAt: new Date("2021-01-20:09:00"),
+
+        finishedAt: new Date("2021-01-20:12:00"),
+
+        tasksGiven: 5,
+
+        tasksFinished: 3,
+
+        topic: "Loops"
+
+    },
+    {
+
+        startedAt: new Date("2021-01-20:11:00"),
+
+        finishedAt: new Date("2021-01-20:18:00"),
+
+        tasksGiven: 10,
+
+        tasksFinished: 6,
+
+        topic: "GitHub"
+
+    },
+    {
+
+        startedAt: new Date("2021-01-20:11:00"),
+
+        finishedAt: new Date("2021-01-20:13:00"),
+
+        tasksGiven: 80,
+
+        tasksFinished: 7,
+
+        topic: "TypeScript"
+
+    },
 
 ];
 
+
+// START TO CALCULATE TOTAL TIME AND TASKS FINISHED PRECENT:
 let totalTime;
 
-for( let x of mainArr){
-x.totalTime = parseInt((x.finishedAt - x.startedAt)/3600000);
+for (let x of mainArr) {
+    x.totalTime = parseInt((x.finishedAt - x.startedAt) / 3600000);
 };
 
-for(let y of mainArr ){
+for (let y of mainArr) {
 
     let yfloored = Math.floor((y.tasksFinished / y.tasksGiven) * 100)
     y.tasksFinishedPrecent = parseInt(yfloored);
 
 
-    
+
+};
+
+
+// START OF TABLE
+
+let tableStart = document.write("<table>");
+
+for (let keyhead in mainArr[1]) { //getting the table heads by the arrays key
+    document.write(`<th>${keyhead}</th>`);
 };
 
 
 
-
-let tableStart = document.write("<table>");
-// let table head = document.write(`<th> <td>${Object.keys(mainArr)} </td></th>`)
-// for(let th of mainArr){
-    // let tableHead = document.write(`<th> <td>${Object.keys(mainArr[1])}</td></th>`);
-// }
-
-for( let keyhead in mainArr[1]){
-    document.write(`<th>${keyhead}</th>`)
-}
-
-
-// console.log(mainArr);
-// for (obj of mainArr){
-//     let classTotalTime;
-//     if(obj.totalTime <= 2){
-//        return classTotalTime = "ifLessTwoHours"
-//     } if(2 <obj.totalTime < 4){
-//         return classTotalTime = "ifLessFourHours"
-//     }else{
-//         return classTotalTime = "isMore"
-//     }
-
-// };
-
-
-
-for (let tr of mainArr){
+for (let tr of mainArr) {  //start of the table data and rows
     let classTotalTime;
     if (tr.totalTime <= 2) {
-        classTotalTime ="ifLessTwoHours";
+        classTotalTime = "ifLessTwoHours";
     } else if (tr.totalTime <= 4) {
         classTotalTime = "ifLessFourHours";
-        
-    }else{
+
+    } else {
         classTotalTime = "ifMore";
     }
 
     let classPrecent;
+    if (tr.tasksFinishedPrecent <= 30) {
+        classPrecent = "ifLessThirty";
 
-    document.write( `<tr> <td>${tr.startedAt.toLocaleTimeString()}</td> <td>${tr.finishedAt.toLocaleTimeString()} </td><td>${tr.tasksGiven}</td>
-    <td>${tr.tasksFinished}</td><td>${tr.topic}</td><td class = ${classTotalTime}>${tr.totalTime} hours</td><td>${tr.tasksFinishedPrecent} %</td>
-    </tr>`);
-    // for(td in tr){
-    // document.write(`<tr><td>${tr[td]}</td> </tr>`);
+    } else if (tr.tasksFinishedPrecent <= 66) {
+        classPrecent = "ifLessSixsty"
 
+    } else {
+        classPrecent = "ifMorePrecent"
+    }
 
-    };
-
-
-
-
-
+    document.write(
+        `<tr> <td> ${tr.startedAt.toLocaleTimeString()} </td> <td> ${tr.finishedAt.toLocaleTimeString()} </td> <td> ${tr.tasksGiven} </td> 
+<td> ${tr.tasksFinished} </td> <td> ${tr.topic} </td> <td class = ${classTotalTime}> ${tr.totalTime} hours </td> <td class = ${classPrecent}> ${tr.tasksFinishedPrecent} % </td> </tr>`
+);
 
 
 
+};
 
 let tableEnd = document.write("</table>");
 
 
 
-// let x = parseInt("2 hours");
-// console.log(x);
 
 
 
