@@ -125,7 +125,7 @@ const mainArr = [
 
                                             startedAt: new Date("2021-01-20:11:00"),
                                             
-                                            finishedAt: new Date("2021-01-20:14:00"),
+                                            finishedAt: new Date("2021-01-20:13:00"),
                                             
                                             tasksGiven: 10,
                                             
@@ -140,7 +140,7 @@ const mainArr = [
 let totalTime;
 
 for( let x of mainArr){
-x.totalTime = (x.finishedAt - x.startedAt)/3600000 + " hours";
+x.totalTime = parseInt((x.finishedAt - x.startedAt)/3600000);
 };
 
 for(let y of mainArr ){
@@ -166,20 +166,34 @@ for( let keyhead in mainArr[1]){
 }
 
 
-// console.log(mainArr)
+// console.log(mainArr);
+// for (obj of mainArr){
+//     let classTotalTime;
+//     if(obj.totalTime <= 2){
+//        return classTotalTime = "ifLessTwoHours"
+//     } if(2 <obj.totalTime < 4){
+//         return classTotalTime = "ifLessFourHours"
+//     }else{
+//         return classTotalTime = "isMore"
+//     }
+
+// };
 
 
 
 for (let tr of mainArr){
+    let classTotalTime;
+    if (tr.totalTime <= 2) {
+        classTotalTime ="ifLessTwoHours"
+    }
     document.write( `<tr> <td>${tr.startedAt.toLocaleTimeString()}</td> <td>${tr.finishedAt.toLocaleTimeString()}</td><td>${tr.tasksGiven}</td>
-    <td>${tr.tasksFinished}</td><td>${tr.topic}</td><td>${tr.totalTime}</td><td>${tr.tasksFinishedPrecent}</td>
+    <td>${tr.tasksFinished}</td><td>${tr.topic}</td><td class = ${classTotalTime}>${tr.totalTime}</td><td>${tr.tasksFinishedPrecent}</td>
     </tr>`);
     // for(td in tr){
     // document.write(`<tr><td>${tr[td]}</td> </tr>`);
 
 
-    // }
-};
+    };
 
 
 
@@ -190,3 +204,11 @@ for (let tr of mainArr){
 
 
 let tableEnd = document.write("</table>");
+
+
+
+// let x = parseInt("2 hours");
+// console.log(x);
+
+
+

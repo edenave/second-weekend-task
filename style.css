@@ -17,3 +17,14 @@ td{
     text-align: center  ;
     border: 1px solid black;
 }
+
+.ifLessTwoHours{
+    background-color: lawngreen;
+}
+
+.ifLessFourHours{
+    background-color: peru;
+}
+.ifMore{
+    background-color: purple;
+}
