@@ -184,7 +184,10 @@ for( let keyhead in mainArr[1]){
 for (let tr of mainArr){
     let classTotalTime;
     if (tr.totalTime <= 2) {
-        classTotalTime ="ifLessTwoHours"
+        classTotalTime ="ifLessTwoHours";
+    } else if ( 2 < tr.totalTime <= 4) {
+        classTotalTime = "ifLessFourHours";
+        
     }
     document.write( `<tr> <td>${tr.startedAt.toLocaleTimeString()}</td> <td>${tr.finishedAt.toLocaleTimeString()}</td><td>${tr.tasksGiven}</td>
     <td>${tr.tasksFinished}</td><td>${tr.topic}</td><td class = ${classTotalTime}>${tr.totalTime}</td><td>${tr.tasksFinishedPrecent}</td>
