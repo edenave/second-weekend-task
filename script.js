@@ -158,17 +158,35 @@ for(let y of mainArr ){
 let tableStart = document.write("<table>");
 // let table head = document.write(`<th> <td>${Object.keys(mainArr)} </td></th>`)
 // for(let th of mainArr){
-   let tableHead = document.write(`<th> ${Object.keys(mainArr[1])}</th>`)
+    // let tableHead = document.write(`<th> <td>${Object.keys(mainArr[1])}</td></th>`);
 // }
 
-for (let tr of mainArr){
-    document.write( "<tr><td>" + tr + "</td></tr>")
-};
+for( let keyhead in mainArr[1]){
+    document.write(`<th>${keyhead}</th>`)
+}
 
 
-
-let tableEnd = document.write("</table>");
 // console.log(mainArr)
 
 
 
+for (let tr of mainArr){
+    document.write( `<tr> <td>${tr.startedAt.toLocaleTimeString()}</td> <td>${tr.finishedAt.toLocaleTimeString()}</td><td>${tr.tasksGiven}</td>
+    <td>${tr.tasksFinished}</td><td>${tr.topic}</td><td>${tr.totalTime}</td><td>${tr.tasksFinishedPrecent}</td>
+    </tr>`);
+    // for(td in tr){
+    // document.write(`<tr><td>${tr[td]}</td> </tr>`);
+
+
+    // }
+};
+
+
+
+
+
+
+
+
+
+let tableEnd = document.write("</table>");
