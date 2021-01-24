@@ -157,54 +157,112 @@ for (let y of mainArr) {
 
 // START OF TABLE
 
-const tableStart = document.createElement('table');
-document.body.appendChild(tableStart);
-for (let keyhead in mainArr[1]) { //getting the table heads by the arrays key
-    const tablehead = document.createElement('th');
-    tablehead.textContent = keyhead;
-    tableStart.appendChild(tablehead);
+// const tableStart = document.createElement('table');
+// const tablerow = document.createElement('tr');
+
+// for (let keyhead in mainArr[1]) { //getting the table heads by the arrays key
+//     const tablehead = document.createElement('th');
+//     tablehead.textContent = keyhead;
+//     tableStart.append(tablehead);
     // document.write(`<th>${keyhead}</th>`);
+// };
+
+
+
+for (let tr of mainArr) {  //start of the table data and rows
+    let classTotalTime;
+    if (tr.totalTime <= 2) {
+        classTotalTime = "ifLessTwoHours";
+    } else if (tr.totalTime <= 4) {
+        classTotalTime = "ifLessFourHours";
+
+    } else {
+        classTotalTime = "ifMore";
+    }
+
+    let classPrecent;
+    if (tr.tasksFinishedPrecent <= 30) {
+        classPrecent = "ifLessThirty";
+
+    } else if (tr.tasksFinishedPrecent <= 66) {
+        classPrecent = "ifLessSixsty"
+
+    } else {
+        classPrecent = "ifMorePrecent"
+    }
 };
 
 
+const body = document.body;
+const table = document.createElement("table");
+body.append(table);
+const tableheadArr = ["StartedAt", "FinishedAt", "TaskGiven", "TaskFinished", "Topic", "TotalTime", "TaskFinishedPrecent"];
 
-// for (let tr of mainArr) {  //start of the table data and rows
-//     let classTotalTime;
-//     if (tr.totalTime <= 2) {
-//         classTotalTime = "ifLessTwoHours";
-//     } else if (tr.totalTime <= 4) {
-//         classTotalTime = "ifLessFourHours";
+createTableHeader(tableheadArr);
 
-//     } else {
-//         classTotalTime = "ifMore";
-//     }
 
-//     let classPrecent;
-//     if (tr.tasksFinishedPrecent <= 30) {
-//         classPrecent = "ifLessThirty";
 
-//     } else if (tr.tasksFinishedPrecent <= 66) {
-//         classPrecent = "ifLessSixsty"
+function createTableHeader(tableheadArr){
+    const tr = document.createElement('tr');
+    for(let header of tableheadArr){
+        const th = document.createElement('th')
+        th.innerText = header;
+        tr.append(th);
+    }
+    table.append(tr);
+}
 
-//     } else {
-//         classPrecent = "ifMorePrecent"
-//     }
 
-//     const tablerow = document.createElement('tr');
+function createTableRows(object, bodyarr){
+    const tr = document.createElement('tr')
+    for(let header of bodyarr){
+        const td = document.createElement('td');
+        td.innerText = header[object];
+        tr.append(td)
+    }
+    table.append(tr);
+}
+
+for(let time of mainArr){
+    time.finishedAt = time.finishedAt.toLocaleTimeString();
+    time.startedAt = time.startedAt.toLocaleTimeString();
+    if (time.totalTime <=2) {
+
+        
+    }
+
+}
+
+console.log(mainArr)
+
+for(let obj of mainArr){
+
+
+    const tr = document.createElement('tr');
+    for(let val in obj){
+        const td = document.createElement('td');
+        if (val === totalTime && val <=2) {
+            td.className += 'ifLessTwoHours';
+            
+        }
+        td.innerText = obj[val];
+        tr.append(td)}
+    
+    table.append(tr);
+}
+
+
+// for(let obj of mainArr){
 //     const td = document.createElement('td');
-//     document.write(
-//         `<tr> <td> ${tr.startedAt.toLocaleTimeString()} </td> <td> ${tr.finishedAt.toLocaleTimeString()} </td> <td> ${tr.tasksGiven} </td> 
-// <td> ${tr.tasksFinished} </td> <td> ${tr.topic} </td> <td class = ${classTotalTime}> ${tr.totalTime} hours </td> <td class = ${classPrecent}> ${tr.tasksFinishedPrecent} % </td> </tr>`
-// );
+//     if (obj.totalTime <= 2) {
+//         td.className = "ifLessTwoHours"
+//         td.innerText = obj.totalTime
+// }
+// table.append(td)
 
 
-
-// };
-
-// let tableEnd = document.write("</table>");
-
-
-
-
-
-
+// function getTimecolor(obj.totalTime){
+//     if (obj.tota) {
+        
+//     }
+// }
