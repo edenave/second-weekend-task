@@ -226,10 +226,6 @@ function createTableRows(object, bodyarr){
 for(let time of mainArr){
     time.finishedAt = time.finishedAt.toLocaleTimeString();
     time.startedAt = time.startedAt.toLocaleTimeString();
-    if (time.totalTime <=2) {
-
-        
-    }
 
 }
 
@@ -241,10 +237,11 @@ for(let obj of mainArr){
     const tr = document.createElement('tr');
     for(let val in obj){
         const td = document.createElement('td');
-        if (val === totalTime && val <=2) {
-            td.className += 'ifLessTwoHours';
-            
+        if (obj.totalTime <= 2) {
+            td.className = `ifLessTwoHours`
         }
+        
+
         td.innerText = obj[val];
         tr.append(td)}
     
@@ -261,8 +258,16 @@ for(let obj of mainArr){
 // table.append(td)
 
 
-// function getTimecolor(obj.totalTime){
-//     if (obj.tota) {
-        
-//     }
-// }
+function getTimecolor(obj){
+    for (let obj of mainArr) {  
+
+        if (obj.t <= 2) {
+            return "ifLessTwoHours";
+        } else if (tr.totalTime <= 4) {
+            return "ifLessFourHours";
+    
+        } else {
+            return "ifMore";
+        }
+    }
+}
