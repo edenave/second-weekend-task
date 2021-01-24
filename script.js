@@ -157,46 +157,51 @@ for (let y of mainArr) {
 
 // START OF TABLE
 
-let tableStart = document.write("<table>");
-
+const tableStart = document.createElement('table');
+document.body.appendChild(tableStart);
 for (let keyhead in mainArr[1]) { //getting the table heads by the arrays key
-    document.write(`<th>${keyhead}</th>`);
+    const tablehead = document.createElement('th');
+    tablehead.textContent = keyhead;
+    tableStart.appendChild(tablehead);
+    // document.write(`<th>${keyhead}</th>`);
 };
 
 
 
-for (let tr of mainArr) {  //start of the table data and rows
-    let classTotalTime;
-    if (tr.totalTime <= 2) {
-        classTotalTime = "ifLessTwoHours";
-    } else if (tr.totalTime <= 4) {
-        classTotalTime = "ifLessFourHours";
+// for (let tr of mainArr) {  //start of the table data and rows
+//     let classTotalTime;
+//     if (tr.totalTime <= 2) {
+//         classTotalTime = "ifLessTwoHours";
+//     } else if (tr.totalTime <= 4) {
+//         classTotalTime = "ifLessFourHours";
 
-    } else {
-        classTotalTime = "ifMore";
-    }
+//     } else {
+//         classTotalTime = "ifMore";
+//     }
 
-    let classPrecent;
-    if (tr.tasksFinishedPrecent <= 30) {
-        classPrecent = "ifLessThirty";
+//     let classPrecent;
+//     if (tr.tasksFinishedPrecent <= 30) {
+//         classPrecent = "ifLessThirty";
 
-    } else if (tr.tasksFinishedPrecent <= 66) {
-        classPrecent = "ifLessSixsty"
+//     } else if (tr.tasksFinishedPrecent <= 66) {
+//         classPrecent = "ifLessSixsty"
 
-    } else {
-        classPrecent = "ifMorePrecent"
-    }
+//     } else {
+//         classPrecent = "ifMorePrecent"
+//     }
 
-    document.write(
-        `<tr> <td> ${tr.startedAt.toLocaleTimeString()} </td> <td> ${tr.finishedAt.toLocaleTimeString()} </td> <td> ${tr.tasksGiven} </td> 
-<td> ${tr.tasksFinished} </td> <td> ${tr.topic} </td> <td class = ${classTotalTime}> ${tr.totalTime} hours </td> <td class = ${classPrecent}> ${tr.tasksFinishedPrecent} % </td> </tr>`
-);
+//     const tablerow = document.createElement('tr');
+//     const td = document.createElement('td');
+//     document.write(
+//         `<tr> <td> ${tr.startedAt.toLocaleTimeString()} </td> <td> ${tr.finishedAt.toLocaleTimeString()} </td> <td> ${tr.tasksGiven} </td> 
+// <td> ${tr.tasksFinished} </td> <td> ${tr.topic} </td> <td class = ${classTotalTime}> ${tr.totalTime} hours </td> <td class = ${classPrecent}> ${tr.tasksFinishedPrecent} % </td> </tr>`
+// );
 
 
 
-};
+// };
 
-let tableEnd = document.write("</table>");
+// let tableEnd = document.write("</table>");
 
 
 
