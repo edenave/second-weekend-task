@@ -239,6 +239,12 @@ for(let obj of mainArr){
         const td = document.createElement('td');
         if (obj.totalTime <= 2) {
             td.className = `ifLessTwoHours`
+        }else if (obj.totalTime <= 4) {
+            td.className = "ifLessFourHours";
+        }else if (obj.totalTime > 4) {
+            td.className = "ifMore";
+        }else{
+            td.classList.remove();
         }
         
 
